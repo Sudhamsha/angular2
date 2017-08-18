@@ -4,8 +4,8 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-simple-form',
   template: `
     <div>
-    
-    <input type="text" value="{{message}}" #myInput/>
+    {{message}}
+    <input #myInput type="text" [(ngModel)]="message"/>
       <input (click)="onClick($event)" type="button" value="Click me!"/>
     </div>
   `,
