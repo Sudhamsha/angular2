@@ -1,12 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-simple-form',
   template: `
     <div>
-    {{message}}
     <input #myInput type="text" [(ngModel)]="message"/>
-      <input (click)="onClick($event)" type="button" value="Click me!"/>
+      <input (click)="update.emit({text:message})" type="button" value="Click me!"/>
     </div>
   `,
   styles: []
@@ -14,11 +13,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SimpleFormComponent implements OnInit {
 
   @Input() message;
+  @Output() update = new EventEmitter();
+
   constructor() { }
 
-  onClick(val){
-    console.log("Hello World! Input value is ", val)
-  }
   ngOnInit() {
   }
 

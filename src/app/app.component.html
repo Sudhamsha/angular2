@@ -4,8 +4,14 @@
     {{title}}
   </h1>
   <ul>
-    <app-simple-form [message]="message"  *ngFor="let message of mail.messages">
-      {{message}}
+    <li *ngFor="let message of mail.messages">{{message.text}}</li>
+  </ul>
+  <ul>
+    <app-simple-form
+            [message]="message.text"
+            (update)="onUpdate(message.id, $event.text)"
+            *ngFor="let message of mail.messages">
+      {{message.text}}
     </app-simple-form>
   </ul>
 

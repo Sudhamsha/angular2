@@ -12,4 +12,8 @@ export class AppComponent {
   constructor(private mail:MailService,) {
 
   }
+
+  onUpdate(id, text) {
+    this.mail.update(id, text);
+  }
 }
