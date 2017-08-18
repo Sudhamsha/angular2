@@ -1,0 +1,7 @@
+:host(app-simple-form){
+    display: flex;
+    flex-direction: column;
+}
+app-simple-form{
+    margin-bottom: 10px;
+}
