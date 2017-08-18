@@ -13,7 +13,10 @@ import { MailService } from './mail.service';
   imports: [
     BrowserModule
   ],
-  providers: [ MailService ],
+  providers: [
+      MailService,
+      {provide: 'api', useValue: 'http://localhost'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
